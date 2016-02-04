@@ -4,6 +4,7 @@ all: test
 
 release:
 	cd api/cmd/formation && make release VERSION=$(VERSION)
+	cd cmd/agent && make release
 	docker build -t convox/api:$(VERSION) .
 	docker push convox/api:$(VERSION)
 	mkdir -p /tmp/release/$(VERSION)
