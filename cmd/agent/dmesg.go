@@ -57,4 +57,13 @@ func (m *Monitor) ReportDmesg() {
 	} else {
 		m.ReportError(errors.New(string(out)))
 	}
+
+	out, err = exec.Command("cat", "/var/log/docker").CombinedOutput()
+
+	if err != nil {
+		m.ReportError(err)
+	} else {
+		m.ReportError(errors.New(string(out)))
+	}
+
 }
