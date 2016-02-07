@@ -7,7 +7,8 @@ release:
 	docker build -t convox/api:$(VERSION) .
 	docker push convox/api:$(VERSION)
 	docker tag convox/api:$(VERSION) 922560784203.dkr.ecr.us-east-1.amazonaws.com/rack:$(VERSION)
-	$(aws ecr get-login)
+	aws ecr get-login --registry-ids 922560784203
+	$(aws ecr get-login --registry-ids 922560784203)
 	docker push 922560784203.dkr.ecr.us-east-1.amazonaws.com/rack:$(VERSION)
 	mkdir -p /tmp/release/$(VERSION)
 	cd /tmp/release/$(VERSION)
