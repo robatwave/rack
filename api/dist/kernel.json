@@ -48,7 +48,7 @@
     "DockerImageApi": {
       "Condition": "Development",
       "Value": { "Fn::If": [ "BlankDockerImageApi",
-        { "Fn::Join": [ ":", [ "convox/api", { "Ref": "Version" } ] ] },
+        { "Fn::Join": [ ":", [ "922560784203.dkr.ecr.us-east-1.amazonaws.com/rack", { "Ref": "Version" } ] ] },
         { "Ref": "DockerImageApi" }
       ] }
     },
@@ -1014,7 +1014,7 @@
               "CUSTOM_TOPIC": { "Fn::GetAtt": [ "CustomTopic", "Arn" ] },
               "CLUSTER": { "Ref": "Cluster" },
               "DOCKER_IMAGE_API": { "Fn::If": [ "BlankDockerImageApi",
-                { "Fn::Join": [ ":", [ "convox/api", { "Ref": "Version" } ] ] },
+                { "Fn::Join": [ ":", [ "922560784203.dkr.ecr.us-east-1.amazonaws.com/rack", { "Ref": "Version" } ] ] },
                 { "Ref": "DockerImageApi" }
               ] },
               "DYNAMO_BUILDS": { "Ref": "DynamoBuilds" },
@@ -1041,7 +1041,7 @@
               "SUBNETS": { "Fn::Join": [ ",", [ { "Ref": "Subnet0" }, { "Ref": "Subnet1" }, { "Ref": "Subnet2" } ] ] },
               "VPC": { "Ref": "Vpc" }
             },
-            "Image": { "Fn::Join": [ ":", [ "convox/api", { "Ref": "Version" } ] ] },
+            "Image": { "Fn::Join": [ ":", [ "922560784203.dkr.ecr.us-east-1.amazonaws.com/rack", { "Ref": "Version" } ] ] },
             "Links": [],
             "Memory": "128",
             "Name": "web",
@@ -1099,7 +1099,7 @@
               "CUSTOM_TOPIC": { "Fn::GetAtt": [ "CustomTopic", "Arn" ] },
               "CLUSTER": { "Ref": "Cluster" },
               "DOCKER_IMAGE_API": { "Fn::If": [ "BlankDockerImageApi",
-                { "Fn::Join": [ ":", [ "convox/api", { "Ref": "Version" } ] ] },
+                { "Fn::Join": [ ":", [ "922560784203.dkr.ecr.us-east-1.amazonaws.com/rack", { "Ref": "Version" } ] ] },
                 { "Ref": "DockerImageApi" }
               ] },
               "DYNAMO_BUILDS": { "Ref": "DynamoBuilds" },
@@ -1126,7 +1126,7 @@
               "SUBNETS": { "Fn::Join": [ ",", [ { "Ref": "Subnet0" }, { "Ref": "Subnet1" }, { "Ref": "Subnet2" } ] ] },
               "VPC": { "Ref": "Vpc" }
             },
-            "Image": { "Fn::Join": [ ":", [ "convox/api", { "Ref": "Version" } ] ] },
+            "Image": { "Fn::Join": [ ":", [ "922560784203.dkr.ecr.us-east-1.amazonaws.com/rack", { "Ref": "Version" } ] ] },
             "Links": [],
             "Memory": "64",
             "Name": "monitor",
